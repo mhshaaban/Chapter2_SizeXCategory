@@ -16,8 +16,6 @@ var svg = d3.select("body").append("svg")
 ///////////////////////////////////////////////
 
 // x-axis will be time, circle radius, circle color, and y-scale for positioning
-var types = Array.from(new Set(data.map((d) => d.Type)));
-var xCoords = types.map((d, i) => 150 + i * 150);
 
 var sizeScale = d3.scaleLinear()
            .domain([10, 7000])
