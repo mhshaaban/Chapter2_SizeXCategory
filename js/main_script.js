@@ -178,9 +178,9 @@ function mouseoverBubble(d,i) {
     d3.select("#tooltip")
       .style("left", (d3.event.pageX - 20) + "px")   
       .style("top", (d3.event.pageY + 20) + "px")
-      .html('<p class= "tooltip-drugname">' + d.brand_name + "</p>" +  
-        '<p class= "tooltip-description">' + d.description + "</p>" + 
-        '<p class= "tooltip-top">' + "Approved " + d.dates_clean + " | " + d.company + "</p>");
+      .html('<p class= "tooltip-drugname">' + d.VillageEN + "</p>" +  
+        '<p class= "tooltip-description">' + d.Feddans + "</p>" + 
+        '<p class= "tooltip-top">' + "Founder " + d.Founder + " | " + d.FoundationYear + "</p>");
     d3.select("#tooltip").classed("hidden", false);
 
 }
