@@ -18,7 +18,7 @@ var svg = d3.select("body").append("svg")
 // x-axis will be time, circle radius, circle color, and y-scale for positioning
 
 var sizeScale = d3.scaleLinear()
-           .domain([10, 7000])
+           .domain([0, 7000])
            .range([0, width - margin.left]);
     
 var rScale = d3.scaleSqrt()
