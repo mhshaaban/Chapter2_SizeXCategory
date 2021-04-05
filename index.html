@@ -74,7 +74,7 @@ d3.csv("data.csv", type, function(error, data) {
       .attr("r", 3)
       .attr("cx", function(d) { return d.data.x; })
       .attr("cy", function(d) { return d.data.y; })
-      .attr("fill",function(d){ return colorScale(d.Category);}).attr("opacity", 0.9);
+      .attr("fill",function(d){ return colorScale(d.data.Category);}).attr("opacity", 0.9);
 
   cell.append("path")
       .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
