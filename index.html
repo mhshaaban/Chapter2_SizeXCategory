@@ -1,0 +1,93 @@
+<!-- Code for D3 Swarm Plot tutorial from 
+https://www.chartfleau.com/tutorials/d3swarm -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>D3 Swarm Plot - Endowed Districts: Category vs Size</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const width = 1920;
+  const height = 1080;
+
+  let svg = d3
+    .select("body")
+    .append("svg")
+    .attr("height", height)
+    .attr("width", width);
+
+  d3.csv("data.csv").then((data) => {
+    let types = Array.from(new Set(data.map((d) => d.Type)));
+    let xCoords = types.map((d, i) => 150 + i * 150);
+    let xScale = d3.scaleOrdinal().domain(types).range(xCoords);
+
+    let yScale = d3
+      .scaleLinear()
+      .domain(d3.extent(data.map((d) => +d["Ibra"])))
+      .range([height - 50, 50]);
+
+    let color = d3.scaleOrdinal().domain(types).range(d3.schemePaired);
+
+    let feddansDomain = d3.extent(data.map((d) => d["Feddans"]));
+    feddansDomain = feddansDomain.map((d) => Math.sqrt(d));
+    let size = d3.scaleLinear().domain(feddansDomain).range([5, 30]);
+
+    svg
+      .selectAll(".circ")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("class", "circ")
+      .attr("stroke", "black")
+      .attr("fill", (d) => color(d.Type))
+      .attr("r", (d) => size(Math.sqrt(d["Feddans"])))
+      .attr("cx", (d) => xScale(d.Type))
+      .attr("cy", (d) => yScale(d.Ibra));
+
+    let simulation = d3
+      .forceSimulation(data)
+      .force(
+        "x",
+        d3
+          .forceX((d) => {
+            return xScale(d.Type);
+          })
+          .strength(0.2)
+      )
+      .force(
+        "y",
+        d3
+          .forceY(function (d) {
+            return yScale(d.Ibra);
+          })
+          .strength(1)
+      )
+      .force(
+        "collide",
+        d3.forceCollide((d) => {
+          return size(Math.sqrt(d["Feddans"]));
+        })
+      )
+      .alphaDecay(0)
+      .alpha(0.3)
+      .on("tick", tick);
+
+    function tick() {
+      d3.selectAll(".circ")
+        .attr("cx", (d) => {
+          return d.x;
+        })
+        .attr("cy", (d) => d.y);
+    }
+
+    let init_decay = setTimeout(function () {
+      console.log("start alpha decay");
+      simulation.alphaDecay(0.1);
+    }, 3000);
+  });
+</script>
