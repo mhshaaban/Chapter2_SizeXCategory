@@ -23,11 +23,11 @@ var sizeScale = d3.scaleLinear()
     
 var rScale = d3.scaleSqrt()
     .domain([10, 500, 1000, 2000, 4000, 20000])
-    .range([0.0125, 0.625, 1.25, 2.5, 5, 25]);
+    .range([1, 1.25, 2.5, 5, 10, 50]);
 
 var colorScale = d3.scaleLinear()
-    .domain([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583", "#ffb545", "#35618f", "#a0d1bc", "#574375", "#363636"]);
+    .domain([1, 2, 3, 4, 5])
+    .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583"]);
 
 var yScale = d3.scaleLinear()
     .domain([1, 5])
