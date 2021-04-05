@@ -34,7 +34,7 @@ var svg = d3.select("svg"),
 
 var formatValue = d3.format(",d");
 
-var colorScale = d3.scaleLinear()
+var colorScale = d3.scaleOrdinal()
     .domain([1,2,3,4,5])
     .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583"]);  
   
