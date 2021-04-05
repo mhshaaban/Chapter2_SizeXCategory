@@ -26,10 +26,10 @@ var rScale = d3.scaleSqrt()
     .range([1, 1.25, 2.5, 5, 10, 50]);
 
 var colorScale = d3.scaleLinear()
-    .domain([1, 2, 3, 4, 5])
+    .domain(["Ayyubid", "Qalawunid Sultan", "Non-Qalawunid Sultan", "Amir", "Qalawunid Family"])
     .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583"]);
 
-var yScale = d3.scaleOrdinal()
+var yScale = d3.scaleLinear()
     .domain(["Ayyubid", "Qalawunid Sultan", "Non-Qalawunid Sultan", "Amir", "Qalawunid Family"])
     .range([45, 450]);
 
