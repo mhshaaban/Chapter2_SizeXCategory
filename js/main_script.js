@@ -84,7 +84,7 @@ var attractForce = d3.forceManyBody()
                      .distanceMax(35)
                      .distanceMin(2000);
 
-var collisionForce = d3.forceCollide(function(d){ return rScale(d.r + 200);})
+var collisionForce = d3.forceCollide(function(d){ return rScale(d.Ibra + 200);})
                        .strength(.3)
                        .iterations(5);
 
