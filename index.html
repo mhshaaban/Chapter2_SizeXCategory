@@ -23,7 +23,7 @@ https://www.chartfleau.com/tutorials/d3swarm -->
 
   d3.csv("data.csv").then((data) => {
     let types = Array.from(new Set(data.map((d) => d.Type)));
-    let xCoords = types.map((d, i) => 150 + i * 150);
+    let xCoords = types.map((d, i) => 250 + i * 250);
     let xScale = d3.scaleOrdinal().domain(types).range(xCoords);
 
     let yScale = d3
