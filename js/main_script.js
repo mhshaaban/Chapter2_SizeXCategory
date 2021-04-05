@@ -41,7 +41,7 @@ var yScale = d3.scaleLinear()
 svg.append("g")
     .attr("class", "xaxis")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-    .call(d3.axisTop(yearScale).ticks(4, "f"))
+    .call(d3.axisTop(sizeScale).ticks(4, "f"))
     // get rid of ugpy horizontal line (just want ticks)
     .call(g => g.select(".domain").remove()); 
 
