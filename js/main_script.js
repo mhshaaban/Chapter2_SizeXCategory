@@ -47,8 +47,8 @@ svg.append("g")
 
 // set the labels to be used for y-axis
 var yLabels = ["Ayyubid",
-               "Qalawunid Sultans", 
-               "Non-Qalawunid Sultans", 
+               "Qalawunid Sultan", 
+               "Non-Qalawunid Sultan", 
                "Amir", 
                "Qalawunid Family"];
 
