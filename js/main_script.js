@@ -29,8 +29,8 @@ var colorScale = d3.scaleLinear()
     .domain([1, 2, 3, 4, 5])
     .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583"]);
 
-var yScale = d3.scaleLinear()
-    .domain([1, 5])
+var yScale = d3.scaleOrdinal()
+    .domain(["Ayyubid", "Qalawunid Sultan", "Non-Qalawunid Sultan", "Amir", "Qalawunid Family"])
     .range([45, 450]);
 
 ///////////////////////////////////////////////
