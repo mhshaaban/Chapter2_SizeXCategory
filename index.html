@@ -56,7 +56,7 @@ d3.csv("data.csv", type, function(error, data) {
   g.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x).ticks(8, ".0s"));
+      .call(d3.axisBottom(x).ticks(6, ".0s"));
 
   var cell = g.append("g")
       .attr("class", "cells")
