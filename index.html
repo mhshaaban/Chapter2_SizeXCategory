@@ -34,6 +34,10 @@ var svg = d3.select("svg"),
 
 var formatValue = d3.format(",d");
 
+var colorScale = d3.scaleLinear()
+    .domain([1,2,3,4,5])
+    .range(["#164f3e", "#a1def0", "#d4554c", "#93bf6d", "#440583"]);  
+  
 var x = d3.scaleLinear()
     .rangeRound([0, width]);
 
@@ -69,7 +73,8 @@ d3.csv("data.csv", type, function(error, data) {
   cell.append("circle")
       .attr("r", 3)
       .attr("cx", function(d) { return d.data.x; })
-      .attr("cy", function(d) { return d.data.y; });
+      .attr("cy", function(d) { return d.data.y; })
+      .attr("fill",function(d){ return colorScale(d.Category);}).attr("opacity", 0.9);
 
   cell.append("path")
       .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
