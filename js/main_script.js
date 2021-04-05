@@ -102,7 +102,7 @@ var node = svg.selectAll("circle").data(nodeData)
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
             .attr("r",function(d){ return rScale(d.Ibra);})
             .attr("cx",function(d){ return sizeScale(d.Feddans);})
-            .attr("cy", 100)
+            .attr("cy", function(d){ return d.y;})
             .attr("fill",function(d){ return colorScale(d.Type);}).attr("opacity", 0.9)
             .on("mouseover", mouseoverBubble)
             .on("mouseout", mouseoutBubble);
@@ -111,7 +111,7 @@ var node = svg.selectAll("circle").data(nodeData)
 // functions for advancing the force simulation
 function ticked(){
      node.attr("cx", function(d){ return d.Feddans;})
-         .attr("cy", 100)
+         .attr("cy", function(d){ return d.y;})
  }
 
 simulation.on("tick",ticked);
