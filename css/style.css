@@ -1,0 +1,130 @@
+body {
+  font-size: calc(12px + (20 - 12) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Slabo 27px', serif;
+  color: #242424;
+  font-weight: 300;
+  font-size: calc(27px + (50 - 27) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+  text-align: center;
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+a, a:link, a:visited, a:active {
+    color: #242424;
+    border-bottom: 1px dotted rgba(36, 36, 36, .4);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #242424;
+    border-bottom: 1px solid rgba(36, 36, 36, .75);
+    text-decoration: none;
+}
+
+#intro {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0% 0% 0% 5%; 
+}
+
+svg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.hover {
+  color: #4f4f4f;
+  font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.active {
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.links line {
+  stroke: #aaa;
+}
+
+.xaxis {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: rgba(60, 60, 60, 1);
+}
+
+.yaxis {
+  font-family: 'Montserrat', sans-serif;
+  font-size:  13px;
+  text-align: left;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.45;
+  shape-rendering: crispEdges;
+}
+
+#tooltip {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  width: 320px;
+  height: auto;
+  padding: 5px;
+  text-anchor: middle;
+  background-color: rgba(245, 245, 245, 0.6);
+  text-shadow: 0 1px 3px white, 1px 0 3px white, -1px 0 3px white, 0 -1px 3px white;
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+.tooltip-drugname {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+line-height: calc(0.5em + (1.2 - 0.7) * ((100vw - 300px)/(1600 - 300)));
+  font-size: calc(10px + (20 - 10) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.tooltip-top {
+  font-size: calc(8px + (16 - 8) * ((100vw - 300px) / (1600 - 300)));
+  padding-top: 7px;
+  line-height: calc(0.8em + (1.2 - 0.7) * ((100vw - 300px)/(1600 - 300)));
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.tooltip-description {
+  line-height: calc(0.9em + (1.2 - 0.7) * ((100vw - 300px)/(1600 - 300)));
+  font-size: calc(8px + (14 - 8) * ((100vw - 300px) / (1600 - 300)));
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.legend-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+}
+
+.approval-size {
+  fill: #b5b5b5;
+}
+
+.approval-legend-value {
+    font-family: 'Slabo 13px', sans-serif;
+    text-anchor: middle;
+    color: #3d3d3d;
+}
+
+.footer {
+  margin: 2%;
+  font-size: 13px;
+  font-family: 'Slabo 13px', sans-serif;
+}
