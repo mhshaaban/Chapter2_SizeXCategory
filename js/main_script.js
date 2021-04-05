@@ -93,7 +93,7 @@ var simulation = d3.forceSimulation(nodeData)
                    .force("attractForce", attractForce)
                    .force("collisionForce", collisionForce)
                    .force("x", d3.forceX(function(d) { return sizeScale(d.Feddans); }).strength(2))
-                   .force("y", d3.forceY(function (d) { return yScale(d.Type); }).strength(1));
+                   .force("y", d3.forceY(function (d) { return yScale(d.Category); }).strength(1));
 
 // plug in the data
 var node = svg.selectAll("circle").data(nodeData)
@@ -103,7 +103,7 @@ var node = svg.selectAll("circle").data(nodeData)
             .attr("r",function(d){ return rScale(d.Ibra);})
             .attr("cx",function(d){ return sizeScale(d.Feddans);})
             .attr("cy", function(d){ return d.y;})
-            .attr("fill",function(d){ return colorScale(d.Type);}).attr("opacity", 0.9)
+            .attr("fill",function(d){ return colorScale(d.Category);}).attr("opacity", 0.9)
             .on("mouseover", mouseoverBubble)
             .on("mouseout", mouseoutBubble);
 
