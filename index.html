@@ -52,7 +52,7 @@ d3.csv("data.csv", type, function(error, data) {
   var simulation = d3.forceSimulation(data)
       .force("x", d3.forceX(function(d) { return x(d.Feddans); }).strength(3))
       .force("y", d3.forceY(height / 2))
-      .force("collide", d3.forceCollide(8))
+      .force("collide", d3.forceCollide(6))
       .stop();
 
   for (var i = 0; i < 120; ++i) simulation.tick();
