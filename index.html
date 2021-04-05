@@ -75,7 +75,7 @@ d3.csv("data.csv", type, function(error, data) {
       .attr("d", function(d) { return "M" + d.join("L") + "Z"; });
 
   cell.append("title")
-      .text(function(d) { return d.data.id + "\n" + formatValue(d.data.value); });
+      .text(function(d) { return d.data.VillageEN + "\n" + formatValue(d.data.Feddans); });
 });
 
 function type(d) {
